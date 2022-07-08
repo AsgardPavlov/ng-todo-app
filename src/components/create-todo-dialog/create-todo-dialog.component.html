@@ -1,0 +1,46 @@
+<div>
+  <h4>
+    НОВАЯ ЗАДАЧА
+  </h4>
+  <div>
+    <form [formGroup]="form" class="create-todo-form">
+      <mat-form-field class="example-full-width" appearance="fill">
+        <input
+          matInput
+          formControlName="text"
+          placeholder="Название задачи..."
+        >
+      </mat-form-field>
+
+      <mat-form-field appearance="fill">
+        <mat-select
+          formControlName="todo_list_id"
+          placeholder="Категория"
+        >
+          <mat-option
+            *ngFor="let project of projectLabels"
+            [value]="project.id"
+          >
+            {{project.title}}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+
+      <div class="button-group">
+        <button
+          mat-dialog-close
+          class="button-default"
+        >
+          Отмена
+        </button>
+        <button
+          mat-dialog-close
+          class="button-primary"
+          (click)="submitForm()"
+        >
+          ОК
+        </button>
+      </div>
+    </form>
+  </div>
+</div>

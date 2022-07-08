@@ -1,0 +1,25 @@
+@import "src/style/variables";
+
+.Header {
+  display: flex;
+  justify-content: center;
+  padding: 15px 10px;
+  background: $primary-color;
+
+  &__title {
+    color: $white-color;
+    font-size: 32px;
+    line-height: normal;
+    margin: 0 auto;
+  }
+}
+
+.content {
+  padding: 45px 35px;
+}
+
+.cards-list {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 35px;
+}

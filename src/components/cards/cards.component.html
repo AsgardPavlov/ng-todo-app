@@ -1,0 +1,21 @@
+<mat-card *ngFor="let project of projects" >
+  <mat-card-title style="font-size: medium">
+    {{project.title.toUpperCase()}}
+  </mat-card-title>
+  <mat-card-content>
+    <div *ngFor="let todo of project.todos">
+      <mat-checkbox
+        (click)="updateTodo({
+          projectId: project.id,
+          todoId: todo.id,
+          text: todo.text,
+          isCompleted: !todo.isCompleted
+        })"
+        [checked]="todo.isCompleted"
+        [ngClass]="{'checkbox-title-strike' : todo.isCompleted}"
+      >
+        {{todo.text}}
+      </mat-checkbox>
+    </div>
+  </mat-card-content>
+</mat-card>

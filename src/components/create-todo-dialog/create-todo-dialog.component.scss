@@ -1,0 +1,23 @@
+@import "src/style/variables";
+
+.create-todo-form {
+  display: grid;
+  grid-gap: 5px;
+}
+.button-group {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: 5px;
+}
+.button-default,
+.button-primary{
+  color: white;
+  border-width: 0 !important;
+  height: 48px;
+}
+.button-default {
+  background: darkgray;
+}
+.button-primary {
+  background: $primary-color;
+}
